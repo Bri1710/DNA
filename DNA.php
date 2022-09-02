@@ -6,22 +6,7 @@ class DNA
 {
     public function DNAStrand(string $dnaString): string
     {
-        $letters = [
-            "A" => "T",
-            "T" => "A",
-            "C" => "G",
-            "G" => "C"
-        ];
-
-        $dnaCharacters = str_split($dnaString);
-        $result = [];
-
-        foreach ($dnaCharacters as $dnaCharacter) {
-            $result[] = $letters[strtoupper($dnaCharacter)];
-        }
-
-        return implode("", $result);
-
+        return strtr($dnaString, 'ACGT', 'TGCA');
     }
 
 }
