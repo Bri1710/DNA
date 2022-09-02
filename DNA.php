@@ -13,13 +13,13 @@ class DNA
             "G" => "C"
         ];
 
-        $lengthOfTheString = strlen($dnaString)-1;
         $dnaCharacters = str_split($dnaString);
         $result = [];
 
-        for ($count = 0; $count <= $lengthOfTheString; $count++) {
-            $result[] = $letters[$dnaCharacters[$count]];
+        foreach ($dnaCharacters as $dnaCharacter) {
+            $result[] = $letters[strtoupper($dnaCharacter)];
         }
+
         return implode("", $result);
 
     }
@@ -28,3 +28,4 @@ class DNA
 
 $DNAClassObject = new DNA();
 $DNAClassObject->DNAStrand("ATTGC");
+
